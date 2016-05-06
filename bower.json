@@ -1,0 +1,23 @@
+{
+  "name": "ToDo",
+  "homepage": "https://github.com/ram-g-athreya/ToDo",
+  "authors": [
+    "Ram G Athreya <ramgathreya@gmail.com>"
+  ],
+  "description": "Basic ToDo App for Personal Use",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pouchdb": "^5.3.2",
+    "bootstrap": "^3.3.6",
+    "Materialize": "materialize#^0.97.6",
+    "angular": "^1.5.5"
+  }
+}

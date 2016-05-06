@@ -1,0 +1,91 @@
+<html ng-app="ToDoApp">
+
+<head>
+    <title>ToDo App</title>
+    <style type="text/css">
+        body {
+            background: #f2f2f2;
+            overflow: hidden;
+        }
+
+        #create-list {
+            width: 25%;
+        }
+
+        #create-list .modal-content {
+            padding-bottom: 0;
+        }
+
+        #create-list form {
+            margin-bottom: 0;
+        }
+
+        #create-list label {
+            left: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css" />
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+
+    <script src="public/js/vendor/sortable/sortable.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/pouchdb/dist/pouchdb.min.js"></script>
+
+    <script src="public/js/main.js"></script>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="js-sortable-list-1 col s4" style="background: teal; height: 100%;">
+
+        </div>
+        <div class="js-sortable-list-2 col s4" style="background: blue; height: 100%;">
+
+        </div>
+        <div class="js-sortable-list-3 col s4" style="background: green; height: 100%;">
+
+        </div>
+    </div>
+
+
+    <!-- Phone List Controller -->
+    <div ng-controller="CreateListController as clc">
+        <!-- Create List Modal -->
+        <div id="create-list" class="modal">
+            <form name="createListForm" id="create-list-form" class="s12" ng-submit="clc.onSubmit()">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="input-field s12">
+                            <input id="title-textbox" ng-model="title" name="title" type="text" class="validate" ng-class="{'invalid': clc.showTitleError}" ng-minlength="1" />
+                            <label for="title-textbox" data-error="Please give a title" class="s12">Title For Your List</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="waves-effect btn-flat blue-text">
+                        Create
+                    </button>
+                    <button ng-click="clc.reset()" class="waves-effect btn-flat">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Floating Button -->
+        <div class="fixed-action-btn" style="bottom: 45px; right: 25px;">
+            <a href="#" class="btn-floating btn-large waves-effect waves-light red modal-trigger js-add-button">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>
